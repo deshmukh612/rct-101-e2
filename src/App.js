@@ -1,7 +1,15 @@
 import React from "react";
+import Products from "./components/Products";
+
+
 
 const App = () => {
-  return <div>{/* TODO: Code here  hello*/}</div>;
+  
+
+
+  return <div>
+    <Products />
+  </div>;
 };
 
 export default App;

@@ -1,19 +1,26 @@
 import React from "react";
+// import {useDisclosurere} from '@chakra-ui/react'
+import {
+  Button,
+  Modal,
+  ModalBody,
+  Select,
+  RadioGroup,
+  Radio,
+  Input,
+  useDisclosure
+  
+} from "@chakra-ui/react";
 
 const AddProduct = () => {
-  // TODO: Remove below const and instead import them from chakra
-  const Button = () => <div />;
-  const Modal = () => <div />;
-  const ModalBody = () => <div />;
-  const Input = () => <div />;
-  const Select = () => <div />;
-  const RadioGroup = () => <div />;
-  const Radio = () => <div />;
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
-      <Button my={4} data-cy="add-product-button"></Button>
-      <Modal>
+      <Button my={4} data-cy="add-product-button" onClick={onOpen}>
+        Add New Product
+      </Button>
+      <Modal isOpen={isOpen} >
         <ModalBody pb={6}>
           <Input data-cy="add-product-title" />
           <Select data-cy="add-product-category">
@@ -27,7 +34,7 @@ const AddProduct = () => {
             <Radio data-cy="add-product-gender-unisex"></Radio>
           </RadioGroup>
           <Input data-cy="add-product-price" />
-          <Button data-cy="add-product-submit-button"></Button>
+          <Button data-cy="add-product-submit-button">Submit</Button>
         </ModalBody>
       </Modal>
     </>
